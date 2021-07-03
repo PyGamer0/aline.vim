@@ -124,8 +124,8 @@ function! aline#Status() abort
     let l:statusline .= '%* %<%{aline#File()}'
     let l:statusline .= "%{&modified ? '+\ ' : ' \ \ '}"
     let l:statusline .= "%{&readonly ? 'RO\ ' : ''}"
-    let l:statusline .= '%#ALineGit#%{moonfly_statusline#GitBranch()}'
-    let l:statusline .= '%*%=%#ALineLsp#%{moonfly_statusline#PluginsStatus()}'
+    let l:statusline .= '%#ALineGit#%{aline#GitBranch()}'
+    let l:statusline .= '%*%=%#ALineLsp#%{aline#LSP()}'
     let l:statusline .= '%l:%c | %7*%L%* | %P '
 
     return l:statusline
