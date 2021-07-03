@@ -14,11 +14,4 @@ highlight ALineMode4 guibg=#ffff66 guifg=#363636
 highlight ALineGit   guifg=#dd66ff
 highlight ALineLsp   guifg=#ffff66
 
-function! s:StatusLine() abort
-    setlocal statusline=%!aline#Status()
-endfunction
-
-augroup ALinesEvents
-    autocmd!
-    autocmd WinEnter,BufWinEnter,WinLeave  * call s:StatusLine()
-augroup END
+set statusline=%!aline#Status()

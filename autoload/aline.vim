@@ -74,7 +74,7 @@ function! s:FileIcon() abort
     endif
 
     if g:nvim_web_devicons
-        return luaeval("require'nvim-web-devicons'.get_icon(vim.fn.expand('%'), vim.fn.expand('%:e'))")
+        return luaeval("require'nvim-web-devicons'.get_icon(vim.fn.expand('%'), vim.fn.expand('%:e'))") . ' '
     endif
 endfunction
 
