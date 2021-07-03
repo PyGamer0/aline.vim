@@ -21,7 +21,7 @@ endfunction
 function! s:UpdateWindows() abort
     for winnum in range(1, winnr('$'))
         if winnum != winnr()
-            call setwinvar(winnum, '&statusline', '%!aline#InactiveLine()')
+            call setwinvar(winnum, '&statusline', '%{aline#InactiveLine()}')
         endif
     endfor
 endfunction
