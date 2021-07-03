@@ -15,19 +15,10 @@ highlight ALineGit   guifg=#dd66ff
 highlight ALineLsp   guifg=#ffff66
 
 function! s:StatusLine() abort
-    setlocal statusline = %!aline#Status()
-endfunction
-
-function! s:UpdateWindows() abort
-    for winnum in range(1, winnr('$'))
-        if winnum != winnr()
-            call setwinvar(winnum, '&statusline', '%{aline#InactiveLine()}')
-        endif
-    endfor
+    setlocal statusline=%!aline#Status()
 endfunction
 
 augroup ALinesEvents
     autocmd!
-    autocmd VimEnter * call s:UpdateWindows()
     autocmd WinEnter,BufWinEnter,WinLeave  * call s:StatusLine()
 augroup END
