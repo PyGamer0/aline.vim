@@ -105,7 +105,7 @@ function! aline#GitBranch() abort
     endif
 
     return ' [ ' . l:name . ' ] '
-endif
+endfunction
 
 function! aline#LSP() abort
     if !has('nvim-0.5') || !g:aline_nvim_lsp
