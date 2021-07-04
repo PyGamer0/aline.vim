@@ -114,7 +114,7 @@ function! aline#LSP() abort
 
     let l:err_count = luaeval("vim.lsp.diagnostic.get_count(0, [[Error]])")
 
-    return l:err_count . '  '
+    return l:err_count . '  | '
 endfunction
 
 function! aline#Status() abort
@@ -126,7 +126,7 @@ function! aline#Status() abort
     let l:statusline .= "%{&readonly ? 'RO\ ' : ''}"
     let l:statusline .= '%#ALineGit#%{aline#GitBranch()}'
     let l:statusline .= '%*%=%#ALineLsp#%{aline#LSP()}'
-    let l:statusline .= '%l:%c | %7*%L%* | %P '
+    let l:statusline .= '%*%l:%c | %7*%L%* | %P '
 
     return l:statusline
 endfunction
